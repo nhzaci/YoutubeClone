@@ -82,6 +82,13 @@
                     </v-list-item-title>
                 </v-list-item>
             </v-list>
+            <v-expansion-panels>
+                <v-expansion-panel>
+                    <v-expansion-panel-header>
+                        Show More
+                    </v-expansion-panel-header>
+                </v-expansion-panel>
+            </v-expansion-panels>
 
             <v-divider></v-divider>
 
@@ -101,7 +108,7 @@
 
             <v-divider></v-divider>
 
-            
+
         </v-navigation-drawer>
         <!-- End of Nav Drawer --> 
 

@@ -1,8 +1,8 @@
 <template>
   <v-content>
-
+    <v-container class="ma-0 pa-0">
     <!-- Start of Navigation Drawer -->
-    <v-navigation-drawer permanent>
+    <v-navigation-drawer permanent absolute :mini-variant="true">
       <v-list nav>
           <v-list-item 
             v-for="route in routes"
@@ -20,10 +20,22 @@
     </v-navigation-drawer>
     <!-- End of Navigation Drawer -->
 
-    <v-container class="fill-height">
-      <v-row>
-        <VideoCard />
-      </v-row>
+    <v-container class="ms-12">
+      <v-col>
+          <v-row>
+            <v-btn rounded v-for="filter in filters" :key="filter">
+              {{ filter }}
+            </v-btn>
+          </v-row>
+          
+          <v-row class="full-width" justify="start" align="start">
+            <VideoCard v-for="video in videos" :key="video"/>
+          </v-row>
+        
+      </v-col>
+          
+    </v-container>
+
     </v-container>
   </v-content>
 </template>
@@ -42,6 +54,18 @@ export default {
         { title: 'Trending', icon: 'mdi-trending-up' },
         { title: 'Subscriptions', icon: 'mdi-youtube-subscription' },
         { title: 'Library', icon: 'mdi-library' },
+      ],
+      cards: [
+        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
+        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
+        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
+      ],
+      videos: [1,2,3,4,5,6,7,8,9,10],
+      filters: [
+        'All Genres',
+        'Gaming',
+        'Sports',
+        'News'
       ]
     }
   }
