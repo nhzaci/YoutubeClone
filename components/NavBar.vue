@@ -2,13 +2,12 @@
     <v-app-bar
         dark
         app
-        dense
     >
         <!-- Left of Bar -->
         <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
-        <v-icon
-            class="mx-2"
-        >mdi-youtube</v-icon>
+        <v-icon class="mx-2">
+            mdi-youtube
+        </v-icon>
         <v-toolbar-title>YouTube</v-toolbar-title>
         <!-- End of Left of Bar -->
 
@@ -60,7 +59,12 @@
             clipped
         >
             <v-list nav>
-                <v-list-item v-for="route in routes" :key='route.title' link>
+                <v-list-item 
+                    v-for="route in routes" 
+                    :key='route.title' 
+                    nuxt
+                    :to="route.path"
+                >
                     <v-list-item-icon>
                         <v-icon>{{ route.icon }}</v-icon>
                     </v-list-item-icon>
@@ -121,9 +125,9 @@ export default {
         return {
             searchText: '',
             routes: [
-                { title: 'Home', icon: 'mdi-home' },
-                { title: 'Trending', icon: 'mdi-trending-up' },
-                { title: 'Subscriptions', icon: 'mdi-youtube-subscription' },
+                { title: 'Home', icon: 'mdi-home', path:"/"},
+                { title: 'Trending', icon: 'mdi-trending-up', path:"/trending"},
+                { title: 'Subscriptions', icon: 'mdi-youtube-subscription', path:"/subscriptions"},
             ],
             library: [
                 { title: 'Library', icon: 'mdi-library' },

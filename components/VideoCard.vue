@@ -1,25 +1,22 @@
 <template>
   <v-card
-    max-width="344"
+    max-height="300"
+    max-width="325"
+    flat
   >
-    <v-card-text>
-      <div>Word of the Day</div>
-      <p class="display-1 text--primary">
-        be•nev•o•lent
+    <v-img
+      src="/food.jpg"
+      height="200px"
+    />
+    <v-card-title>
+      Video Title Here
+    </v-card-title>
+    <v-card-subtitle>
+      <p style="margin:0">Channel name</p>
+      <p style="margin:0">
+        <span>XXk views |</span>
+        <span>X days ago</span>
       </p>
-      <p>adjective</p>
-      <div class="text--primary">
-        well meaning and kindly.<br>
-        "a benevolent smile"
-      </div>
-    </v-card-text>
-    <v-card-actions>
-      <v-btn
-        text
-        color="deep-purple accent-4"
-      >
-        Learn More
-      </v-btn>
-    </v-card-actions>
+    </v-card-subtitle>
   </v-card>
 </template>

@@ -1,8 +1,8 @@
 <template>
-  <v-content>
-    <v-container class="ma-0 pa-0">
+  <v-container class="ma-0 pa-0" fluid>
+    
     <!-- Start of Navigation Drawer -->
-    <v-navigation-drawer permanent absolute :mini-variant="true">
+    <v-navigation-drawer permanent absolute clipped :mini-variant="true">
       <v-list nav>
           <v-list-item 
             v-for="route in routes"
@@ -20,24 +20,27 @@
     </v-navigation-drawer>
     <!-- End of Navigation Drawer -->
 
-    <v-container class="ms-12">
-      <v-col>
-          <v-row>
-            <v-btn rounded v-for="filter in filters" :key="filter">
-              {{ filter }}
-            </v-btn>
-          </v-row>
-          
-          <v-row class="full-width" justify="start" align="start">
-            <VideoCard v-for="video in videos" :key="video"/>
-          </v-row>
-        
-      </v-col>
-          
-    </v-container>
 
-    </v-container>
-  </v-content>
+    <v-row style="margin-left:75px;">
+      <v-col>
+        <v-row>
+          <v-btn class="ma-1" rounded v-for="filter in filters" :key="filter">
+            {{ filter }}
+          </v-btn>
+        </v-row>
+
+        <hr style="border-color:gray">
+        
+        <v-row
+          align="start"
+          justify="start"
+        >
+          <VideoCard class="ma-2" v-for="video in videos" :key="video"/>
+        </v-row>
+      </v-col>
+    </v-row>
+
+  </v-container>
 </template>
 
 <script>
@@ -55,12 +58,7 @@ export default {
         { title: 'Subscriptions', icon: 'mdi-youtube-subscription' },
         { title: 'Library', icon: 'mdi-library' },
       ],
-      cards: [
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', flex: 12 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', flex: 6 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', flex: 6 },
-      ],
-      videos: [1,2,3,4,5,6,7,8,9,10],
+      videos: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
       filters: [
         'All Genres',
         'Gaming',
